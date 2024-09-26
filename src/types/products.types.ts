@@ -1,5 +1,7 @@
 export interface ProductsType {
-  id: number;
-  Title: string;
-  Description: string;
+  id: string;
+  title: string;
+  description: string;
+  price: number;
+  img: [{ url: string }];
 }

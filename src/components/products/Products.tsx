@@ -5,6 +5,9 @@ const fetchProducts = async () => {
     headers: {
       Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`,
     },
+    next: {
+      revalidate: 180,
+    },
   };
   try {
     const res = await fetch(
@@ -23,7 +26,6 @@ export default async function Products() {
 
   return (
     <div>
-      <h1>dsad</h1>
       <Card products={products} />
     </div>
   );
