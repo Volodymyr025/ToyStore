@@ -54,7 +54,7 @@ export default function Card({ products }: CardProps) {
             </div>
             <Image
               className="p-2 mx-auto"
-              src={`http://127.0.0.1:1337/${product.img[0].url}`}
+              src={`https://strapi-toy-store.onrender.com${product.img[0].url}`}
               alt={product.title}
               width={150}
               height={150}

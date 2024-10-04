@@ -11,7 +11,7 @@ const fetchProducts = async () => {
   };
   try {
     const res = await fetch(
-      "http://127.0.0.1:1337/api/products?populate=*",
+      `${process.env.PROTOKOL}://${process.env.HOST_NAME}/api/products?populate=*`,
       options
     );
     const { data } = await res.json();
@@ -24,9 +24,5 @@ const fetchProducts = async () => {
 export default async function Products() {
   const products = await fetchProducts();
 
-  return (
-    <div>
-      <Card products={products} />
-    </div>
-  );
+  return <div>{<Card products={products} />}</div>;
 }
